@@ -10,9 +10,11 @@ NOTE: these drivers are not production-ready. They are offered as sample impleme
 
 To use the SmartDrive driver, simply add the line below to your project's build.gradle, where <version> matches the last version of the driver available on jcenter.
 
+```
 dependencies {
     compile 'com.neuberfran.androidthings.driver-SnartDrive:<version>'
 }
+```
 
 ## Sample usage
 
