@@ -33,7 +33,7 @@ dependencies {
 
 ## Sample usage
 
-```
+```js
 import com.neuberfran.androidthings.driver.SmartDrive;
 
 // Access the environmental driver:
