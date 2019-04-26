@@ -18,6 +18,36 @@ dependencies {
 
 ## Sample usage
 
+```
+import com.neuberfran.androidthings.driver.SmartDrive;
+
+// Access the environmental driver:
+
+SmartDrive SmartDrive;
+
+try {
+    SmartDrive = new SmartDrive(i2cBusName);
+    // Configure driver settings according to your use case
+    SmartDrive.setTemperatureOversampling(SmartDrive.OVERSAMPLING_1X);
+    // Ensure the driver is powered and not sleeping before trying to read from it
+    SmartDrive.setMode(SmartDrive.MODE_NORMAL);
+} catch (IOException e) {
+    // couldn't configure the device...
+}
+
+// Read the current temperature:
+
+try {
+    float temperature = SmartDrive.readTemperature();
+} catch (IOException e) {
+    // error reading temperature
+}
+
+// Close the environmental sensor when finished:
+```
+
+## Schematic
+
 ![alt text](https://github.com/neuberfran/SmartDrive/blob/master/SmartDrive.png)
 
 ## License
