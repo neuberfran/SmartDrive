@@ -19,7 +19,7 @@ dependencies {
 ## Sample usage
 
 ```
-import com.neuberfran.androidthings.driver.SmartDrive;
+<font color="red"> import </font> com.neuberfran.androidthings.driver.SmartDrive;
 
 // Access the environmental driver:
 
