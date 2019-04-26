@@ -1,49 +1,41 @@
-apply plugin: 'com.novoda.bintray-release'
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
-publish {
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9'
+    //    classpath 'com.android.tools.build:gradle:3.4.0'
 
-    def groupProjectID = 'com.neuberfran.androidthings'
-    def artifactProjectID = 'driver-SmartDrive'
-    def publishVersionID = '1.0.0'
-
-    userOrg = 'neuberfran'
-    repoName = 'SmartDrive'
-    groupId = groupProjectID
-    artifactId = artifactProjectID
-    publishVersion = publishVersionID
-    desc = 'Android library for the SmartDrive High Current Motor Controller.'
-    website = 'https://github.com/neuberfran/SmartDrive'
+    }
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        minSdkVersion 27
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
     }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    compileOnly 'com.google.android.things:androidthings:1.0'
+    compileOnly rootProject.ext.dependencies['androidthings']
+    implementation 'com.android.support:support-annotations:28.0.0'
 
+    testImplementation rootProject.ext.dependencies['androidthings']
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:1.10.19'
+}
+
+publish {
+    userOrg = 'neuberfran'
+    repoName = 'SmartDrive'
+    groupId = 'com.neuberfran.androidthings'
+    artifactId = 'driver-SmartDrive'
+    publishVersion = '1.0.0'
+    desc = 'Android Things i2c driver for the SmartDrive to run two motors DC'
+    website = 'https://github.com/neuberfran/SmartDrive'
 }

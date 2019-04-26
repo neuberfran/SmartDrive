@@ -1,1 +1,1 @@
-include ':app', ':SmartDrive'
+include ':SmartDrive'
