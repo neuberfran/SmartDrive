@@ -1,4 +1,4 @@
-SmartDrive driver for Android Things
+# SmartDrive driver for Android Things
 
 This driver supports [SmartDrive](http://www.mindsensors.com/rpi/76-smartdrive-high-current-motor-controller) Driver for the High Current Motor Controller
 
