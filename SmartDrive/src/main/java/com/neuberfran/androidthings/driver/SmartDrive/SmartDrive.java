@@ -165,11 +165,7 @@ public class SmartDrive implements AutoCloseable {
     private void connect(I2cDevice device) throws IOException {
 
         mDevice = device;
-
-        if (mDevice != null) {
-            throw new IllegalStateException ( "device already connected" );
-        }
-
+      
     }
 
     /*
