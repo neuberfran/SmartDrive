@@ -13,7 +13,9 @@ build.gradle```, where ```<version>``` matches the last version of the driver av
 
 ```
 dependencies {
-    compile 'com.neuberfran.androidthings.driver-SnartDrive:<version>'
+
+    implementation 'com.neuberfran.androidthings.driver-SnartDrive:<version>'
+
 }
 ```
 
@@ -34,23 +36,23 @@ mSmartDrive = new SmartDrive(i2cBusName);
     // couldn't configure the device...
 }
 
-// Reset Motor 01 ead the current temperature:
+// Reset encoder values:
 
 try {
-   mSmartDrive?.command(CMD_R);
+   mSmartDrive.command(CMD_R);
 } catch (IOException e) {
     // error reading temperature
 }
 
-// Run Motor 01 in direction
+// Run Motor 01 in Direction_Forwar, speed = 100, duration 9 seconds:
 
 try {
-   mSmartDrive?.SmartDrive_Run_Seconds(0x01, SmartDrive_Direction_Forward, 100, 9, SmartDrive_Completion_Wait_For,SmartDrive_Next_Action_Brake);
+   mSmartDrive.SmartDrive_Run_Seconds(0x01, SmartDrive_Direction_Forward, 100, 9, SmartDrive_Completion_Wait_For,SmartDrive_Next_Action_Brake);
 } catch (IOException e) {
     // error reading temperature
 }
 
-// Close the SmartDrive driver
+// Close the SmartDrive driver:
 
 try {
     mSmartDrive.close();
