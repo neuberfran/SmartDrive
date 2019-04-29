@@ -1,21 +1,20 @@
 {
-   " title " : " ... " ,
-   " category " : " ... " ,
-   " samples " : [ " github_url_of_sample " , " github_url_of_another_sample " ],
+   " title " : "SmartDrive" ,
+   " category " : "i2c Driver for the SmartDrive High Current Motor Controller" ,
+   " samples " : [ "https://github.com/neuberfran/SmartDrive/blob/master/README.md" ],
    " published-jar " : {
-     " localização " : " github_release_url "
+     " localização " : "https://bintray.com/beta/#/neuberfran/SmartDrive/driver-SmartDrive?tab=files"
   }
   " public-maven " : {
-     " maven-url " : " url " ,
-     " groupid " : " com.exemplo.minhaempresa " ,
-     " artefato " : " meudriver "
+     " maven-url " : "https://dl.bintray.com/neuberfran/SmartDrive" ,
+     " groupid " : "com.neuberfran.androidthings" ,
+     " artefato " : "driver-SmartDrive"
   }
   " compatível com " : [
       {
-        " title " : " Bloco SparkFun para Intel Edison " ,
+        " title " : " Raspberry pi 3 " ,
          " photo " : " https://cdn.sparkfun.com/assets/parts/1/1/3/2/1/13770-00.jpg " ,
-         " url " : " https://www.sparkfun.com/products/13770 " ,
-         " notes " : " Suporta apenas um subconjunto deste periférico "
+         " url " : " https://www.sparkfun.com/products/13770 " 
       }
       {
         " título " : " Adafruit ADS1015 12-bit ADC " ,
