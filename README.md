@@ -37,7 +37,7 @@ mSmartDrive = new SmartDrive(i2cBusName);
 // Reset Motor 01 ead the current temperature:
 
 try {
-   mSmartDrive?.command(CMD_R )
+   mSmartDrive?.command(CMD_R);
 } catch (IOException e) {
     // error reading temperature
 }
@@ -58,6 +58,9 @@ try {
     // error closing sensor
 }
 ```
+
+
+
 
 ## Schematic
 
