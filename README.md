@@ -45,12 +45,12 @@ try {
 // Run Motor 01 in direction
 
 try {
-   mSmartDrive?.SmartDrive_Run_Seconds(0x01, SmartDrive_Direction_Forward, 100,9, SmartDrive_Completion_Wait_For,             SmartDrive_Next_Action_Brake);
+   mSmartDrive?.SmartDrive_Run_Seconds(0x01, SmartDrive_Direction_Forward, 100, 9, SmartDrive_Completion_Wait_For,SmartDrive_Next_Action_Brake);
 } catch (IOException e) {
     // error reading temperature
 }
 
-// Close the ambient light sensor when finished:
+// Close the SmartDrive driver
 
 try {
     mSmartDrive.close();
