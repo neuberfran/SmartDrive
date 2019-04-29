@@ -24,27 +24,39 @@ import com.neuberfran.androidthings.driver.SmartDrive;
 
 // Access the environmental driver:
 
-SmartDrive SmartDrive;
+SmartDrive mSmartDrive;
 
 try {
-    SmartDrive = new SmartDrive(i2cBusName);
-    // Configure driver settings according to your use case
-    SmartDrive.setTemperatureOversampling(SmartDrive.OVERSAMPLING_1X);
-    // Ensure the driver is powered and not sleeping before trying to read from it
-    SmartDrive.setMode(SmartDrive.MODE_NORMAL);
+
+mSmartDrive = new SmartDrive(i2cBusName);
+    
 } catch (IOException e) {
     // couldn't configure the device...
 }
 
-// Read the current temperature:
+// Reset Motor 01 ead the current temperature:
 
 try {
-    float temperature = SmartDrive.readTemperature();
+   mSmartDrive?.command(CMD_R )
 } catch (IOException e) {
     // error reading temperature
 }
 
-// Close the environmental sensor when finished:
+// Run Motor 01 in direction
+
+try {
+   mSmartDrive?.SmartDrive_Run_Seconds(0x01, SmartDrive_Direction_Forward, 100,9, SmartDrive_Completion_Wait_For,             SmartDrive_Next_Action_Brake);
+} catch (IOException e) {
+    // error reading temperature
+}
+
+// Close the ambient light sensor when finished:
+
+try {
+    mSmartDrive.close();
+} catch (IOException e) {
+    // error closing sensor
+}
 ```
 
 ## Schematic
