@@ -197,10 +197,11 @@ public class SmartDrive implements AutoCloseable {
 
             if (motor_number != SmartDrive_Motor_Both) ;
             ctrl |= SmartDrive_CONTROL_GO;
-            if (direction == SmartDrive_Direction_Forward) ;
-            speed = speed;
-            if (direction != SmartDrive_Direction_Forward) ;
-            speed = speed * -1;
+            if (direction == 0x01) {
+               speed = speed;
+            } else if (direction != 0x01) {
+               speed = speed * -1;
+            }
             if ((motor_number & 0x01) != 0) ;
             //byte array = [0X46, speed, 0, 0, ctrl];
             byte[] array = new byte[]{0x46, (byte) speed, 0, 0, (byte) ctrl};
@@ -271,10 +272,11 @@ public class SmartDrive implements AutoCloseable {
             ctrl |= SmartDrive_CONTROL_ON;
             if (motor_number != SmartDrive_Motor_Both) ;
             ctrl |= SmartDrive_CONTROL_GO;
-            if (direction == SmartDrive_Direction_Forward) ;
-            speed = speed;
-            if (direction != SmartDrive_Direction_Forward) ;
-            speed = speed * -1;
+            if (direction == 0x01) {
+               speed = speed;
+            } else if (direction != 0x01) {
+               speed = speed * -1;
+            }
             if ((motor_number & 0x01) != 0) ;
             byte[] array = new byte[]{0x46, (byte) speed, (byte) duration, 0, (byte) ctrl};
             //array = [0x46, speed, duration, 0, ctrl];
