@@ -47,7 +47,7 @@ try {
 // Run Motor 01 in Direction_Forward, speed = 100, duration 9 seconds:
 
 try {
-   mSmartDrive.SmartDrive_Run_Seconds(0x01, SmartDrive_Direction_Forward, 100, 9, SmartDrive_Completion_Wait_For,SmartDrive_Next_Action_Brake);
+   mSmartDrive.SmartDrive_Run_Seconds(SmartDrive_Motor_1, SmartDrive_Direction_Forward, 100, 9, SmartDrive_Completion_Wait_For,SmartDrive_Next_Action_Brake);
 } catch (IOException e) {
     // error reading temperature
 }
