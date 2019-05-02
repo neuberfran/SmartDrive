@@ -9,7 +9,7 @@ NOTE: these drivers are not production-ready. They are offered as sample impleme
 ## Gradle dependency
 
 To use the ```SmartDrive``` driver, simply add the line below to your project's ```
-build.gradle```, where ```<version>``` matches the last version of the driver available on [jcenter](https://bintray.com/beta/#/neuberfran/SmartDrive/com.neuberfran.androidthings.driver.SmartDrive?tab=overview).
+build.gradle```, where ```<version>``` matches the last version of the driver available on [jcenter](https://bintray.com/beta/#/neuberfran/SmartDrive/driver-SmartDrive/1.0.1?tab=overview).
 
 ```
 dependencies {
