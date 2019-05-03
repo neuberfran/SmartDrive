@@ -52,6 +52,13 @@ try {
     // error reading temperature
 }
 
+
+// Condition to run unlimited:
+
+  while (!buttongpio.value) {
+      mSmartDrive.SmartDrive_Run_Unlimited(SmartDrive_Motor_1, SmartDrive_Direction_Forward, 100)
+ }
+
 // Close the SmartDrive driver:
 
 try {
