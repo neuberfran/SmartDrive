@@ -74,7 +74,7 @@ try {
 ## Schematic
 
 
-![alt text](https://github.com/neuberfran/SmartDrive/blob/master/SmartDrive.png)
+![alt text](https://github.com/neuberfran/SmartDrive/blob/master/imgSmartDrive.png)
 
 
 ## License
